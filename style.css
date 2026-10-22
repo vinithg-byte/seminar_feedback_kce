@@ -127,3 +127,63 @@
     max-width: 100%;
   }
 }
+
+
+
+/* Mobile-only horizontal overflow fix */
+@media screen and (max-width: 600px) {
+  html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: clip;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+
+  main,
+  header,
+  footer,
+  .container,
+  .hero,
+  .hero-inner,
+  .section,
+  .intro-section,
+  .college-banner,
+  .speaker-grid,
+  .feedback-panel {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    max-width: 100%;
+  }
+
+  .hero,
+  .hero-inner,
+  .college-banner,
+  .speaker-grid {
+    overflow-wrap: anywhere;
+  }
+}
