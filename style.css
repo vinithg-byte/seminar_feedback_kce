@@ -187,3 +187,56 @@
     overflow-wrap: anywhere;
   }
 }
+
+
+/* Mobile-only: use the full screen width */
+@media screen and (max-width: 600px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  main,
+  .container,
+  .section,
+  .intro-section,
+  .speaker-grid,
+  .college-banner,
+  .feedback-panel {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .speaker-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .speaker-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+  }
+
+  .speaker-card img,
+  .portrait-wrap,
+  .portrait {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .college-banner {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
