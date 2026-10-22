@@ -240,3 +240,134 @@
     margin-right: 0;
   }
 }
+
+
+
+
+
+/* FINAL MOBILE-ONLY RESPONSIVE FIX */
+@media screen and (max-width: 600px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: clip !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  .topbar,
+  .hero,
+  .section,
+  .feedback-section,
+  .closing,
+  footer {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .topbar {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero,
+  .section,
+  .feedback-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .hero-copy,
+  .hero-visual,
+  .section-intro,
+  .speaker-grid {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-visual {
+    overflow: clip;
+  }
+
+  .speaker-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .speaker-card,
+  .speaker-card:last-child {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    grid-column: auto;
+    margin: 0;
+  }
+
+  .speaker-card:last-child .portrait-wrap {
+    height: 320px;
+    min-height: 0;
+  }
+
+  .college-banner {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 0 8px;
+    padding: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .college-banner-copy {
+    min-width: 0;
+    padding: 23px 20px;
+  }
+
+  .portrait-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .portrait {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  .form-panel,
+  #feedbackForm,
+  .participant-grid,
+  .two-fields {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .speaker-card *,
+  .form-panel * {
+    min-width: 0;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+}
