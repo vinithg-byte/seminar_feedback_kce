@@ -240,3 +240,58 @@
     margin-right: 0;
   }
 }
+
+/* MOBILE VIEWPORT WIDTH FIX */
+@media screen and (max-width: 600px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Keep the header and all main sections inside the phone */
+  header,
+  main,
+  footer,
+  section,
+  .site-header,
+  .hero,
+  .hero-inner,
+  .section,
+  .intro-section,
+  .college-banner,
+  .speaker-grid,
+  .speaker-card,
+  .feedback-panel,
+  .container {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Prevent fixed-width cards from overflowing */
+  .college-banner,
+  .speaker-grid,
+  .speaker-card,
+  .feedback-panel {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
