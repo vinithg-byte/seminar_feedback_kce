@@ -29,3 +29,101 @@
 /* Full-speaker-photo fix: avoid cropping heads/faces */
 @media(max-width:900px){.speaker-card:last-child .portrait-wrap{height:360px;min-height:0}}
 @media(max-width:600px){.portrait-wrap{height:390px}.speaker-card:last-child .portrait-wrap{height:390px;min-height:0}}
+
+
+
+/* Final speaker photo fit — mobile and desktop */
+.portrait-wrap {
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+  background: #10182b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portrait {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform 0.5s ease;
+  filter: saturate(0.95);
+}
+
+.speaker-card:hover .portrait {
+  transform: scale(1.025);
+}
+
+/* Remove the dark gradient over the photo */
+.portrait-wrap:after {
+  content: none;
+}
+
+@media (max-width: 600px) {
+  .portrait-wrap {
+    height: 320px;
+  }
+
+  .portrait {
+    object-position: center 20%;
+  }
+}
+
+
+
+
+/* Mobile full-width layout fix */
+@media screen and (max-width: 600px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  main,
+  header,
+  footer,
+  .hero,
+  .section,
+  .intro-section,
+  .college-banner,
+  .speaker-grid,
+  .feedback-panel,
+  .container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .college-banner,
+  .section,
+  .intro-section,
+  .speaker-grid,
+  .feedback-panel {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    max-width: 100%;
+  }
+}
