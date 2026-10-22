@@ -504,3 +504,223 @@
     max-width: 100%;
   }
 }
+
+
+/* =========================================================
+   FINAL MOBILE FIX — prevent sideways page movement
+   and fit speaker portraits inside their cards
+   ========================================================= */
+@media screen and (max-width: 600px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: clip !important;
+  }
+
+  body {
+    position: relative;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Prevent decorative glows/orbits from widening the page */
+  .ambient,
+  .ambient-one,
+  .ambient-two {
+    max-width: 100vw;
+    pointer-events: none;
+  }
+
+  .ambient-two {
+    right: 0;
+    transform: translateX(50%);
+  }
+
+  /* Keep the header and all main sections within the phone viewport */
+  .topbar,
+  .hero,
+  .section,
+  .feedback-section,
+  .closing,
+  footer {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .topbar {
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 10px;
+  }
+
+  .brand {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .top-link {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .hero,
+  .section,
+  .feedback-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .hero-copy,
+  .hero-visual,
+  .section-intro,
+  .speaker-grid,
+  .speaker-card,
+  .speaker-info,
+  #feedbackForm,
+  .form-panel {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-visual {
+    overflow: hidden;
+  }
+
+  .orbit-a {
+    max-width: 90%;
+  }
+
+  .orbit-b {
+    max-width: 85%;
+  }
+
+  .chip-top {
+    right: 0;
+  }
+
+  .chip-bottom {
+    left: 0;
+  }
+
+  .speaker-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .speaker-card,
+  .speaker-card:last-child {
+    display: block;
+    grid-column: auto;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  /* Portrait fills the card width; image remains clipped to card bounds */
+  .portrait-wrap,
+  .speaker-card:last-child .portrait-wrap {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 320px;
+    min-height: 0;
+    overflow: hidden;
+    background: #10182b;
+  }
+
+  .portrait,
+  .speaker-card:last-child .portrait {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    transform: none;
+  }
+
+  .speaker-card:hover .portrait {
+    transform: none;
+  }
+
+  .college-banner {
+    width: calc(100% - 40px);
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 20px 12px;
+    padding: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .college-banner-copy {
+    min-width: 0;
+    padding: 23px 20px;
+  }
+
+  .participant-grid,
+  .two-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .participant-grid,
+  .two-fields,
+  .recommend-field,
+  .submit-row,
+  input,
+  select,
+  textarea,
+  button {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+}
+
+/* Guard against any remaining accidental horizontal overflow */
+@media screen and (max-width: 600px) {
+  main,
+  header,
+  footer,
+  .topbar,
+  .hero,
+  .section,
+  .feedback-section,
+  .closing,
+  .college-banner,
+  .speaker-grid,
+  .speaker-card,
+  .form-panel {
+    min-width: 0;
+  }
+
+  .hero h1,
+  .section h2,
+  .closing h2,
+  .hero-description,
+  .section-intro,
+  .topic,
+  .speaker-job,
+  .speaker-org {
+    overflow-wrap: anywhere;
+  }
+}
